@@ -14,6 +14,7 @@ You hereby grant, and agree to grant, to OpenIM a non-exclusive, perpetual, irre
 
 However, rest assured that you will retain all your other rights, title, and interest in your Contributions.
 
+
 ### Patent License
 
 You also grant, and agree to grant, to OpenIM a non-exclusive, perpetual, irrevocable, worldwide, fully-paid, royalty-free, transferable **patent license**. This license enables OpenIM to:
