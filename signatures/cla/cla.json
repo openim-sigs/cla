@@ -1,3 +1,20 @@
 {
-   "signedContributors": []
+  "signedContributors": [
+    {
+      "name": "cubxxw",
+      "id": 86140903,
+      "comment_id": 1643638715,
+      "created_at": "2023-07-20T10:03:56Z",
+      "repoId": 668625691,
+      "pullRequestNo": 4
+    },
+    {
+      "name": "cubxxw",
+      "id": 86140903,
+      "comment_id": 1643639701,
+      "created_at": "2023-07-20T10:04:37Z",
+      "repoId": 668625691,
+      "pullRequestNo": 4
+    }
+  ]
 }
