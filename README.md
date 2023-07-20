@@ -56,4 +56,4 @@ Here are some ways to get involved with the OpenIM community:
 
 📱 **WeChat**: Add us on WeChat ([QR Code]([https://github.com/OpenIMSDK/OpenIM-Docs/blob/main/docs/images/WechatIMG20.jpeg](https://openim-1253691595.cos.ap-nanjing.myqcloud.com/WechatIMG20.jpeg))) and indicate that you are a user or developer of Open-IM-Server. We'll process your request as soon as possible.
 
-Remember, your contributions play a vital role in making OpenIM successful, and we look forward to your active participation in our community! 🙌
+Remember, ur contributions play a vital role in making OpenIM successful, and we look forward to your active participation in our community! 🙌
