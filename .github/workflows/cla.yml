@@ -1,4 +1,4 @@
-name: "CLA Assistant"
+name: "OpenIM CLA Assistant"
 on:
   issue_comment:
     types: [created]
@@ -18,7 +18,7 @@ env:
   OPEN_IM_SERVER_REPOSITORY: cla
   OPEN_IM_SERVER_CLA_DOCUMENT: https://github.com/openim-sigs/cla/blob/main/README.md
   OPEN_IM_SERVER_SIGNATURES_PATH: signatures/cla/cla.json
-  OPEN_IM_SERVER_ALLOWLIST: user1 #,bot*
+  OPEN_IM_SERVER_ALLOWLIST: kubbot,bot*
   OPEN_IM_SERVER_REMOTE_ORGANIZATION: openim-sigs
 
 jobs:
@@ -36,6 +36,11 @@ jobs:
           path-to-document: ${{ env.OPEN_IM_SERVER_CLA_DOCUMENT }}
           branch: 'main'
           allowlist: ${{ env.OPEN_IM_SERVER_ALLOWLIST }}
+
           remote-organization-name: ${{ env.OPEN_IM_SERVER_REMOTE_ORGANIZATION }}
-          create-file-commit-message: 'Docs: Creating file for storing Open-IM-Server CLA Signatures'
-        #   custom-notsigned-prcomment: 'Thank you for your contribution and please kindly read and sign our $pathToCLADocument'
+          create-file-commit-message: 'Docs: Creating file for storing ${{ env.OPEN_IM_SERVER_ORGANIZATION }} CLA Signatures'
+          custom-notsigned-prcomment: '💕 Thank you for your contribution and please kindly read and sign our ${{ env.OPEN_IM_SERVER_CLA_DOCUMENT }}'
+          custom-pr-sign-comment: 'The signature to be committed in order to sign ${{ env.OPEN_IM_SERVER_ORGANIZATION }} the CLA'
+          custom-allsigned-prcomment: '**🤖 CLA Assistant Lite bot** All Contributors have signed the ${{ env.OPEN_IM_SERVER_ORGANIZATION }} [CLA](https://github.com/openim-sigs/cla/blob/main/README.md).'
+        #   lock-pullrequest-aftermerge: false - if you don't want this bot to automatically lock the pull request after merging (default - true)
+        #   use-dco-flag: true - If you are using DCO instead of CLA
