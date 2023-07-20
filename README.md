@@ -2,7 +2,7 @@
 
 **😄 Thank you for your interest in contributing to OpenIM's open-source software projects! 😄**
 
-By submitting any source code, bug fixes, configuration changes, documentation, feedback, or other works of authorship (collectively referred to as "Contributions") to OpenIM or its affiliates, you agree to the terms of this Individual Contributor License Agreement ("Agreement"). Your Contributions are crucial to the success of the Projects, and we sincerely appreciate your participation in the community! If you have any questions about this Agreement, please contact [3293172751nss@gmail.com](https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=3293172751nss@gmail.com).
+By submitting any source code, bug fixes, configuration changes, documentation, feedback, or other works of authorship (collectively referred to as "Contributions") to OpenIM or its affiliates, you agree to the terms of this Individual Contributor License Agreement ("Agreement"). Your Contributions are crucial to the success of the Projects, and we sincerely appreciate your participation in the community! If you have any questions about this Agreement, please contact [📧3293172751nss@gmail.com](https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=3293172751nss@gmail.com).
 
 
 ### Copyright License
