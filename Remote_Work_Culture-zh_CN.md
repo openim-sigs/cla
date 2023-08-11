@@ -1,5 +1,26 @@
 # OpenIM 远程工作团队协作协议 v1.3
 
+- [OpenIM 远程工作团队协作协议 v1.3](#openim-远程工作团队协作协议-v13)
+  - [Principles](#principles)
+    - [0）Ownership \& Leadership](#0ownership--leadership)
+    - [1）Initiative](#1initiative)
+    - [2）Objectives Oriented](#2objectives-oriented)
+    - [3）Insists on High Standard](#3insists-on-high-standard)
+  - [Practices](#practices)
+    - [0）Online](#0online)
+    - [1) Documentation Driven](#1-documentation-driven)
+    - [2）Design Review](#2design-review)
+    - [3) Simplification \& Automation](#3-simplification--automation)
+    - [4）Review \& Re-factory](#4review--re-factory)
+    - [5）Milestone Commitment](#5milestone-commitment)
+    - [6）Evidence Driven](#6evidence-driven)
+    - [7）Demo Day](#7demo-day)
+    - [8) Effective Meeting](#8-effective-meeting)
+    - [9）1-2-3 Escalation](#91-2-3-escalation)
+    - [A）3PS Update](#a3ps-update)
+    - [B) Disagree and Commitment](#b-disagree-and-commitment)
+
+
 ## Principles
 
 ### 0）Ownership & Leadership
@@ -162,4 +183,3 @@
 - Release出去的东西，只要被用户用上了，要改就难了，所以要谨慎而果敢。
 
 “在团队决定之后，即使有不同意见，也需要全力支持团队的决策。”
-
