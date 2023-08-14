@@ -1,6 +1,6 @@
 ## OpenIM Individual Contributor License Agreement
 
-**😄 Thank you for your interest in contributing to OpenIM's open-source software projects!**
+**We appreciate your interest in contributing to OpenIM's open-source software projects.**
 
 By submitting any source code, bug fixes, configuration changes, documentation, feedback, or other works of authorship (collectively referred to as "Contributions") to OpenIM or its affiliates, you agree to the terms of this Individual Contributor License Agreement ("Agreement"). Your Contributions are crucial to the success of the Projects, and we sincerely appreciate your participation in the community! If you have any questions about this Agreement, please contact [3293172751nss@gmail.com](https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=3293172751nss@gmail.com).
 
@@ -26,7 +26,7 @@ This patent license applies only to those patent claims licensable by you that a
 
 ### Moral Rights
 
-We respect your moral rights as an author. However, to the fullest extent permitted under applicable law, you hereby **waive and agree not to assert** any "moral rights" in or relating to your Contributions. This waiver benefits OpenIM, its assigns, and their respective direct and indirect sublicensees.
+We respect your moral rights as an author. To the fullest extent permitted under applicable law, you are required to **waive and agree not to assert** any "moral rights" in or relating to your Contributions. This waiver benefits OpenIM, its assigns, and their respective direct and indirect sublicensees.
 
 ### Representations
 
@@ -46,7 +46,7 @@ This Agreement shall be **[governed by and construed in accordance](https://en.w
 
 ## Get Involved with OpenIM!
 
-Here are some ways to get involved with the OpenIM community:
+Here are several ways you can contribute to the OpenIM community:
 
 📢 **Slack Channel**: Join our Slack channels for discussions, communication, and support. Click [here](https://join.slack.com/t/openimsdk/shared_invite/zt-1tmoj26uf-_FDy3dowVHBiGvLk9e5Xkg) to join the Open-IM-Server Slack team channel.
 
