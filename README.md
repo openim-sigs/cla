@@ -26,7 +26,7 @@ This patent license applies only to those patent claims licensable by you that a
 
 ### Moral Rights
 
-We respect your moral rights as an author. However, to the fullest extent permitted under applicable law, you hereby **waive and agree not to assert** any "moral rights" in or relating to your Contributions. This waiver benefits OpenIM, its assigns, and their respective direct and indirect sublicensees.
+We respect your moral rights as an author. However, you agree not to assert any "moral rights" in your Contributions to the fullest extent permitted under applicable law. This benefits OpenIM and its sublicensees.
 
 ### Representations
 
@@ -46,14 +46,4 @@ This Agreement shall be **[governed by and construed in accordance](https://en.w
 
 ## Get Involved with OpenIM!
 
-Here are some ways to get involved with the OpenIM community:
-
-📢 **Slack Channel**: Join our Slack channels for discussions, communication, and support. Click [here](https://join.slack.com/t/openimsdk/shared_invite/zt-1tmoj26uf-_FDy3dowVHBiGvLk9e5Xkg) to join the Open-IM-Server Slack team channel.
-
-📧 **Gmail Contact**: If you have any questions, suggestions, or feedback for our open-source projects, please feel free to [contact us via email](mailto:winxu81@gmail.com).
-
-📖 **Blog**: Stay up-to-date with OpenIM-Server projects and trends by reading our [blog](https://doc.rentsoft.cn/). We share the latest developments, tech trends, and other interesting information related to OpenIM.
-
-📱 **WeChat**: Add us on WeChat ([QR Code]([https://github.com/OpenIMSDK/OpenIM-Docs/blob/main/docs/images/WechatIMG20.jpeg](https://openim-1253691595.cos.ap-nanjing.myqcloud.com/WechatIMG20.jpeg))) and indicate that you are a user or developer of Open-IM-Server. We'll process your request as soon as possible.
-
-Remember, your contributions play a vital role in making OpenIM successful, and we look forward to your active participation in our community! 🙌
+Join our [Slack channel](https://join.slack.com/t/openimsdk/shared_invite/zt-1tmoj26uf-_FDy3dowVHBiGvLk9e5Xkg) for discussions and support. For questions or feedback, [contact us via email](mailto:winxu81@gmail.com). Stay updated with our projects by reading our [blog](https://doc.rentsoft.cn/). You can also add us on WeChat ([QR Code](https://openim-1253691595.cos.ap-nanjing.myqcloud.com/WechatIMG20.jpeg)). We appreciate your contributions and active participation in our community! 🙌
