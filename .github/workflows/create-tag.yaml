@@ -17,12 +17,13 @@ jobs:
     - name: Create Tag
       run: |
         COMMENT_BODY="${{ github.event.comment.body }}"
-        TAG=$(echo $COMMENT_BODY | cut -d' ' -f3)
-        COMMENT=$(echo $COMMENT_BODY | cut -d' ' -f4-)
+        TAG=$(echo $COMMENT_BODY | awk '{print $3}')
+        COMMENT=$(echo $COMMENT_BODY | awk '{$1=$2=$3=""; print $0}')
+        COMMENT=$(echo $COMMENT | sed 's/^ *//;s/ *$//')  # Remove leading and trailing whitespaces
         echo "Creating tag $TAG with comment '$COMMENT'"
         git config user.name "GitHub Action"
         git config user.email "action@github.com"
         git tag -a $TAG -m "$COMMENT"
         git push origin $TAG
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
