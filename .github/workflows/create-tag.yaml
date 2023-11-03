@@ -35,8 +35,8 @@ jobs:
         fi
         
         echo "Creating tag $TAG with comment '$COMMENT'"
-        git config user.name "GitHub Action"
-        git config user.email "action@github.com"
+        git config user.name "kubbot"
+        git config user.email "3293172751ysy@gmail.com"
         git tag -a $TAG -m "$COMMENT"
         git push origin $TAG
 
