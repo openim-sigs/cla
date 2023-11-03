@@ -9,19 +9,19 @@ on:
 jobs:
   create_tag:
     runs-on: ubuntu-latest
-    if: startsWith(github.event.comment.body, '/create tag')
+    if: startsWith(github.event.comment.body, '/create-tag')
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Create a new tag
         env:
-          GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Extract version number and tag comment from the issue or pull request comment
-          COMMENT="${{ github.event.comment.body }}"
-          VERSION=$(echo "$COMMENT" | awk -F ' ' '{print $3}')
-          TAG_COMMENT=$(echo "$COMMENT" | awk -F '"' '{print $2}')
+          # Use bash parameter expansion to handle comment extraction
+          COMMENT_BODY="${{ github.event.comment.body }}"
+          VERSION=$(echo "$COMMENT_BODY" | awk '/^\/create tag/ {print $3}')
+          TAG_COMMENT=$(echo "$COMMENT_BODY" | grep -oP '(?<=").*?(?=")')
 
           # Validate version number
           if ! [[ $VERSION =~ ^v([0-9]+\.){2}[0-9]+$ ]]; then
@@ -30,10 +30,15 @@ jobs:
             exit 1
           fi
 
-          # Create and push the tag
+          # Configure Git and create the tag
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions Bot"
           git tag -a "$VERSION" -m "$TAG_COMMENT"
           git push origin "$VERSION"
           echo "Tag '$VERSION' created with comment: $TAG_COMMENT"
+          
+          # Set output for subsequent steps, if necessary
+          echo "tag_created=$VERSION" >> $GITHUB_ENV
 
           # Set output for subsequent steps, if necessary
           echo "tag_created=$VERSION" >> $GITHUB_ENV
