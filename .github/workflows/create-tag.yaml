@@ -7,26 +7,22 @@ on:
     types: [created]
 
 jobs:
-  create_tag:
-    runs-on: ubuntu-latest
+  create-tag:
     if: startsWith(github.event.comment.body, '/create tag')
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Create tag
-        run: |
-          echo "Parsing comment for tag creation command..."
-          COMMENT_BODY="${{ github.event.comment.body }}"
-          TAG_REGEX='^\/create tag ([a-zA-Z0-9\.-]+) "(.*)"'
-          if [[ $COMMENT_BODY =~ $TAG_REGEX ]]; then
-            TAG=${BASH_REMATCH[1]}
-            TAG_MESSAGE=${BASH_REMATCH[2]}
-            echo "Creating tag $TAG with message: $TAG_MESSAGE"
-            git config --global user.name 'GitHub Actions'
-            git config --global user.email 'actions@github.com'
-            git tag -a $TAG -m "$TAG_MESSAGE"
-            git push origin $TAG
-          else
-            echo "No tag creation command found in comment."
-          fi
+    - name: Create Tag
+      run: |
+        COMMENT_BODY="${{ github.event.comment.body }}"
+        TAG=$(echo $COMMENT_BODY | cut -d' ' -f3)
+        COMMENT=$(echo $COMMENT_BODY | cut -d' ' -f4-)
+        echo "Creating tag $TAG with comment '$COMMENT'"
+        git config user.name "GitHub Action"
+        git config user.email "action@github.com"
+        git tag -a $TAG -m "$COMMENT"
+        git push origin $TAG
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
