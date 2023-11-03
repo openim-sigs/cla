@@ -13,9 +13,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.BOT_GITHUB_TOKEN }}
-        user: kubbot # 将 "username" 替换为您想要使用的 GitHub 用户名
 
     - name: Set up Git user
       run: |
