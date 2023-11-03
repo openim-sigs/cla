@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Create Tag
       run: |
@@ -20,10 +20,16 @@ jobs:
         TAG=$(echo $COMMENT_BODY | awk '{print $3}')
         COMMENT=$(echo $COMMENT_BODY | awk '{$1=$2=$3=""; print $0}')
         COMMENT=$(echo $COMMENT | sed 's/^ *//;s/ *$//')  # Remove leading and trailing whitespaces
+        
+        if [[ -z "$TAG" || -z "$COMMENT" ]]; then
+          echo "Error: Tag name or comment is empty"
+          exit 1
+        fi
+        
         echo "Creating tag $TAG with comment '$COMMENT'"
         git config user.name "GitHub Action"
         git config user.email "action@github.com"
         git tag -a $TAG -m "$COMMENT"
         git push origin $TAG
       env:
-        GITHUB_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
