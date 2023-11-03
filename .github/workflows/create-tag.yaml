@@ -9,36 +9,24 @@ on:
 jobs:
   create_tag:
     runs-on: ubuntu-latest
-    if: startsWith(github.event.comment.body, '/create-tag')
+    if: startsWith(github.event.comment.body, '/create tag')
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Create a new tag
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create tag
         run: |
-          # Use bash parameter expansion to handle comment extraction
+          echo "Parsing comment for tag creation command..."
           COMMENT_BODY="${{ github.event.comment.body }}"
-          VERSION=$(echo "$COMMENT_BODY" | awk '/^\/create tag/ {print $3}')
-          TAG_COMMENT=$(echo "$COMMENT_BODY" | grep -oP '(?<=").*?(?=")')
-
-          # Validate version number
-          if ! [[ $VERSION =~ ^v([0-9]+\.){2}[0-9]+$ ]]; then
-            echo "Invalid version number: $VERSION"
-            echo "The version number must match the pattern 'vX.Y.Z' where X, Y, and Z are integers."
-            exit 1
+          TAG_REGEX='^\/create tag ([a-zA-Z0-9\.-]+) "(.*)"'
+          if [[ $COMMENT_BODY =~ $TAG_REGEX ]]; then
+            TAG=${BASH_REMATCH[1]}
+            TAG_MESSAGE=${BASH_REMATCH[2]}
+            echo "Creating tag $TAG with message: $TAG_MESSAGE"
+            git config --global user.name 'GitHub Actions'
+            git config --global user.email 'actions@github.com'
+            git tag -a $TAG -m "$TAG_MESSAGE"
+            git push origin $TAG
+          else
+            echo "No tag creation command found in comment."
           fi
-
-          # Configure Git and create the tag
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "GitHub Actions Bot"
-          git tag -a "$VERSION" -m "$TAG_COMMENT"
-          git push origin "$VERSION"
-          echo "Tag '$VERSION' created with comment: $TAG_COMMENT"
-          
-          # Set output for subsequent steps, if necessary
-          echo "tag_created=$VERSION" >> $GITHUB_ENV
-
-          # Set output for subsequent steps, if necessary
-          echo "tag_created=$VERSION" >> $GITHUB_ENV
